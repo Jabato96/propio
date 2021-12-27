@@ -24,13 +24,13 @@ rm ttl.txt
 echo -e "\e[1;31mObjetivo = $target | $var \e[0m"
 echo -e "-----------------------------"
 for port in $(seq 1 65535);do
-	timeout 1 bash -c "echo '' > /dev/tcp/$target/$port" 2>/dev/null && echo -e "\e[0;35m[*]\e[0m\e[1;33m El puerto $port esta abierto\e[0m\n" &
+	timeout 1 bash -c "echo '' > /dev/tcp/$target/$port" 2>/dev/null && echo -e "\e[0;35m[*]\e[0m\e[1;33m[*] Puerto: $port -> OPEN\e[0m\n" &
 	done
 tput cnorm
 }
 
 function helppanel(){
-	echo -e "\e[0;35m[*]\e[0m\e[1;33mUsa -t para añadir el objetivo\e[0m\e[0;35m[*]\e[0m\n" 
+	echo -e "\e[0;35m[*]\e[0m\e[1;33mUsage: -t para añadir el objetivo\e[0m\e[0;35m[*]\e[0m\n" 
 }
 
 #Main function
