@@ -11,8 +11,7 @@ function targeted(){
 tput civis
 
 
-ping -c1 $target | cut -d "=" -f3 > ttl.txt
-ttl=$(grep -m1 "time" ttl.txt | sed 's/time//')
+ttl=$(ping -c1 $target 2>/dev/null | grep ttl | cut -d "=" -f3 | cut -d " " -f1)
 if [ $ttl -lt 64 ]; then
 	var=$(echo "Linux")
 else
