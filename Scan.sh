@@ -18,7 +18,7 @@ else
 	var=$(echo "Windows")
 fi
 rm ttl.txt
-#clear
+clear
 
 
 echo -e "\e[1;31mObjetivo = $target | $var \e[0m"
