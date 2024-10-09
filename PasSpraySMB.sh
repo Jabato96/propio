@@ -37,9 +37,9 @@ while IFS= read -r username; do
 done < [INPUT FROM USERS FILE]
 }
 #Main function
-declare -i parameter_counter=0; while getopts "t:s:p:h:" arg;do
+declare -i parameter_counter=0; while getopts "d:s:p:h:" arg;do
 	case $arg in
-		t) domain_or_ip="$OPTARG"; let parameter_counter+=1 ;;
+		d) domain_or_ip="$OPTARG"; let parameter_counter+=1 ;;
 		s) share="$OPTARG";  let parameter_counter+=1 ;;
 		p) password="$OPTARG"; let parameter_counter+=1 ;;
 		h) helppanel ;;
